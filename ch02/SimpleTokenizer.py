@@ -36,7 +36,7 @@ class SimpleTokenizerV1:
 
     def decode(self, ids):
         text = " ".join([self.int_to_str[i] for i in ids])
-        text = re.sub(r'\s+([,.?!"()\'])', r'\1', text)
+        text = re.sub(r'\s+([,.:;?!"()\'])', r'\1', text)
         return text
 
 
@@ -53,3 +53,11 @@ all_tokens.extend(["<|endoftext|>", "<|unk|>"])
 vocab = {token:integer for integer, token in enumerate(all_tokens)}
 
 print(len(vocab))
+
+text1 = "Hello, do you like tea?"
+text2 = "In the sunlit terraces of the palace."
+text = " <|endoftext|> ".join((text1, text2))
+print(text)
+
+tokenizer = SimpleTokenizerV1(vocab)
+print(tokenizer.encode(text))
