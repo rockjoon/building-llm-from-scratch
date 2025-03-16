@@ -6,10 +6,14 @@ authors = [
     {name = "rockjoon",email = "rockpago@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12.4"
 dependencies = [
-    "tiktoken (>=0.9.0,<0.10.0)"
+    "tiktoken (>=0.9.0,<0.10.0)",
+    "torch (==2.2.0)"
 ]
+[tool.poetry.dependencies]
+torch = "*"
+
 
 
 [build-system]
