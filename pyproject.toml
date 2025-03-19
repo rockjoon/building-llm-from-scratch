@@ -6,15 +6,24 @@ authors = [
     {name = "rockjoon",email = "rockpago@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12.4"
+requires-python = ">=3.11.6"
 dependencies = [
     "tiktoken (>=0.9.0,<0.10.0)",
-    "torch (==2.2.0)"
+    "torch (==2.2.2)",
+    "numpy (>=2.2.4,<3.0.0)",
 ]
 [tool.poetry.dependencies]
-torch = "*"
 
+[tool.poetry.group.dev.dependencies]
+pybind11 = "^2.13.6"
 
+[tool.poetry]
+package-mode = false
+
+[[tool.poetry.source]]
+name = "pytorch_cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
